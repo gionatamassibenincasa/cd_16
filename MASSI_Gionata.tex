@@ -130,11 +130,11 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 }
 
 \begin{frame}{Piano della presentazione}
-	\boxednumber{1} Parte~~I: Illustrazione delle scelte contenutistiche, didattiche e metodologiche
+	\boxednumber{1} Parte~~~I: Illustrazione delle scelte contenutistiche, didattiche e metodologiche
 	
 	\medskip
 	
-	\boxednumber{2} Parte~~I: Esposizione di una lezione simulata
+	\boxednumber{2} Parte~~II: Esposizione di una lezione simulata
 	
 	\medskip
 	\boxednumber{3} Parte~III: Interlocuzioni con il candidato
@@ -186,11 +186,9 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 	
 	\begin{block}{Su cosa devo preparare una lezione?}
 		\begin{itemize}
-			\item\alert<2>{il Domain Name System (DNS)}
-			\item \texttt{/etc/hosts}
-			\item \texttt{/etc/resolv.conf}
-			\item bind (\texttt{/sbin/named})
-			\item DHCP
+			\item Lezione partecipata sul \alert<2>{Domain Name System (DNS)} con IPv4.
+			\item Attivit\`a di aboratorio usando \texttt{nslookup} e \texttt{wireshark}.
+			\item Con pi\`u di 24 avrei potuto progettare il laboratorio sull'analisi dei file \texttt{/etc/hosts} e \texttt{/etc/resolv.conf} e per la configurazione di \texttt{bind} su una rete di calcolatori emulata.
 		\end{itemize}
 	\end{block}
 
@@ -235,7 +233,7 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 			\end{itemize}			
 			\item 20 alunni (18M / 2F)
 			\item 0 alunni ripetenti
-			\item 1 alunno BES con PDP (consulente esterno)
+			\item 1 alunno BES disgrafico con PDP
 			\item la maggioranza degli alunni con livello medio/alto
 			\item gli studenti svolgono lezione in laboratorio, con una postazione PC per ogni alunno
 			\item il laboratorio \`e dotato di proiettore e lavagna bianca
@@ -244,7 +242,7 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 	
 \end{frame}
 
-\section[Programmazione didattica]{Programmazione didattica}
+\section[Progettazione didattica]{Progettazione didattica}
 
 \begin{frame}[allowframebreaks]{Quadro normativo}
 %{Le leggi, le linee guida, le direttive ministeriali}
@@ -419,7 +417,7 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 	\begin{block}{Motivare allo studio: fare leva sui bisogni di}
 		\begin{description}
 			\item[autostima] stima da parte dei compagni e degli insegnanti\\\hfill\textbf{peer assessment}
-			\item[autoe-efficacia] apportare il proprio contributo\\\hfill\textbf{peer assessment, mini-progetto}
+			\item[auto-efficacia] apportare il proprio contributo\\\hfill\textbf{peer assessment, mini-progetto}
 			\item[potere] dominare la realt\`a\\\hfill\textbf{(ri)conoscere architetture e tecnologie della rete}
 			\item[avere uno scopo] dare un senso alle nozioni apprese\\\hfill\textbf{configurare bind, analizzare con sniffer, riconoscere minacce, mini-progetto}
 			\item[sfida] difficolt\`a da superare\\\hfill\textbf{mini-progetto}
@@ -727,6 +725,69 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 		
 	}%note	
 \end{frame}
+
+
+\part[Lezione simulata]{Esposizione della lezione}
+\frame{\partpage}
+
+\section[nslookup]{Query con \texttt{nslookup}}
+
+\begin{frame}{Interrogare il DNS}{Usare \texttt{nslookup}}
+
+\only<1,3,5,7>{
+\begin{block}{Sfide -- usare \texttt{nslookup} in modo interattivo}
+\begin{block}{Leggere insieme la pagina di manuale di \texttt{nslookup}}
+\texttt{man nslookup}
+\end{block}
+
+Chiedere in modo interattivo l'indirizzo dell'host \texttt{ricop.dii.univpm.it}
+\begin{enumerate}
+	\item al name server predefinito 
+	\item \uncover<3->{al name server 8.8.8.8}
+	\item \uncover<5->{abilitando la visualizzazione completa del pacchetto di risposta}
+	\item \uncover<7->{visualizzando le informazioni sull'host}
+\end{enumerate}
+\end{block}
+}
+\only<2>{\includegraphics[width=\textwidth]{img/lab1_1}}
+\only<4>{\includegraphics[width=\textwidth]{img/lab1_2}}
+\only<6>{\includegraphics[width=\textwidth]{img/lab1_3}}
+\only<8>{\includegraphics[width=\textwidth]{img/lab1_4}}
+
+\end{frame}
+
+\section[wireshark]{Analisi del protocollo DNS con \texttt{wireshark}}
+
+\begin{frame}{Analisi del protocollo DNS}{Usare \texttt{wireshark}}
+
+\only<1,3,5,7>{
+\begin{block}{Sfide -- usare \texttt{wireshark} per visualizzare query DNS}
+
+Wireshark lo conosciamo dai moduli precedenti (rete e trasporto).
+
+\begin{enumerate}
+	\item Come filtrare la visualizzazione dei soli pacchetti DNS? Elencare almeno due modi!
+	\item \uncover<3->{Mostrare i pacchetti del protocollo DNS catturati navigando il sito wikiricop.dii.univpm.it}
+	\item \uncover<5->{abilitando la visualizzazione completa del pacchetto di risposta}
+	\item \uncover<7->{visualizzando le informazioni sull'host}
+\end{enumerate}
+\end{block}
+}
+%\only<2>{\includegraphics[width=\textwidth]{img/lab2_1}}
+%\only<4>{\includegraphics[width=\textwidth]{img/lab2_2}}
+%\only<6>{\includegraphics[width=\textwidth]{img/lab2_3}}
+%\only<8>{\includegraphics[width=\textwidth]{img/lab2_4}}
+
+\end{frame}
+
+\section[Valutazione]{Valutazione}
+
+\begin{frame}{Valutazione}{Formativa}
+
+\end{frame}
+
+
+\part[Colloquio]{Colloquio}
 
 \begin{frame}[plain]
 	
