@@ -88,7 +88,7 @@ timewarningfirst=78,timewarningsecond=95]{tdclock}
 }		
 		
 \title[Concorso docenti CdC A41]
-{\Large{Titolo}}
+{\Large{Processo di risoluzione degli indirizzi a livello applicativo}}
 
 \institute[I.T.A. ``E. Sereni'']
 {%
@@ -99,6 +99,9 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 }
 
 \date[Roma, 21/07/2016 {\usebeamercolor[fg]{frametitle}\textbar}~\cronominutes]{Roma -- 21 Luglio 2016}
+
+\newcommand\mybullet{\leavevmode%
+\blu{\usebeamertemplate{itemize item}}\hspace{.5em}}
 
 \begin{document}
 
@@ -127,11 +130,14 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 }
 
 \begin{frame}{Piano della presentazione}
-	\boxednumber{1} Parte~~I: Esposizione di una lezione simulata preceduta da un'illustrazione delle scelte contenutistiche, didattiche e metodologiche
+	\boxednumber{1} Parte~~I: Illustrazione delle scelte contenutistiche, didattiche e metodologiche
 	
 	\medskip
 	
-	\boxednumber{2} Parte~II: Interlocuzioni con il candidato
+	\boxednumber{2} Parte~~I: Esposizione di una lezione simulata
+	
+	\medskip
+	\boxednumber{3} Parte~III: Interlocuzioni con il candidato
 	\note{%
 		{\tiny
 			Buon pomeriggio,
@@ -158,8 +164,13 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 }
 
 \frame{
-	\frametitle{Piano del colloquio}
+	\frametitle{Piano della lezione}
 	\tableofcontents[part=2]
+	}
+
+\frame{
+	\frametitle{Piano del colloquio}
+	\begin{center}\Huge{Any questions?}\end{center}
 	}
 
 \part[Percorso didattico]{Esposizione di un percorso didattico}
@@ -167,92 +178,123 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 
 \section[Contesto]{Il contesto - traccia e ipotesi}
 
-\begin{frame}{Traccia estratta}{Testo della traccia}
+\begin{frame}{Traccia estratta}{Estratto}
 
-	\begin{block}{Testo della traccia}
-	pippo
+	\begin{block}{\ldots{}il candidato analizzi il seguente caso concreto:}
+		\large{processo di risoluzione degli indirizzi a livello applicativo}
+	\end{block}
+	
+	\begin{block}{Su cosa devo preparare una lezione?}
+		\begin{itemize}
+			\item\alert<2>{il Domain Name System (DNS)}
+			\item \texttt{/etc/hosts}
+			\item \texttt{/etc/resolv.conf}
+			\item bind (\texttt{/sbin/named})
+			\item DHCP
+		\end{itemize}
 	\end{block}
 
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Scelta dell'istituto e della classe}{ITE -- AFM -- SIA -- classe $3^{\text{za}}$}
+\begin{frame}{Scelta dell'istituto, della classe e della disciplina}{ITT -- I\&T -- Informatica -- classe $4^{\text{ta}}$ -- Sistemi e reti}
 	
-	\begin{block}{Istituto, settore, indirizzo, articolazione}
-		\noindent$\bullet$ Istituto Tecnico
+	\begin{block}{Istituto, settore, indirizzo, articolazione, disciplina}
+		\noindent\mybullet Istituto \alert{Tecnico}
 		
-		\noindent\hspace*{0.5cm}$\bullet$ Settore Economico
+		\noindent\hspace*{0.5cm}\mybullet Settore \alert{Tecnologico} (Economico)
 		
-		\noindent\hspace*{1.0cm}$\bullet$ Indirizzo ``Amministrazione, Finanza e Marketing''
+		\noindent\hspace*{1.0cm}\mybullet Indirizzo ``\alert{Informatica e Telecomunicazioni}''  (Amministrazione, Finanza e Marketing)
 		
-		\noindent\hspace*{1.5cm}$\bullet$ Articolazione ``Sistemi Informativi Aziendali''
+		\noindent\hspace*{1.5cm}\mybullet Articolazione ``\alert{Informatica}'' (Sistemi Informativi Aziendali)
 		
-		%\noindent\hspace*{2.0cm}{\color{red!50!black}$\circ$ Informatica: insegnamento dell'area di indirizzo!}
+		\noindent\hspace*{2.0cm}\mybullet \alert{Sistemi e reti} (Informatica)
 	\end{block}
 	
+	\begin{block}{Territorio}
+	\begin{itemize}
+		\item Regione Marche
+		\begin{itemize}
+			\item PMI, pi\`u piccole che medie
+			\item sviluppo di applicazioni gestionali
+			\item settore telecomunicazioni e radar
+			\item sistemi di misura e controllo
+		\end{itemize}	
+	\end{itemize}
+	\end{block}
+\end{frame}
+	
+\begin{frame}{Ipotesi della classe e situazione iniziale}{ITT -- I\&T -- Informatica -- classe $4^{\text{ta}}$ -- Sistemi e reti}
 	
 	\begin{block}{Classe}
-		\noindent\hspace*{2cm}$\bullet$ Classe $3^{\text{za}}$
-		
-		\noindent\hspace*{2.5cm}$\bullet$ 132 ore annue $\approx$ 4 ore a settimana
-		
-		\noindent\hspace*{2.5cm}$\bullet$ di cui 2 in compresenza con l'insegnante tecnico pratico
-
-		\noindent\hspace*{2.5cm}$\bullet$ stimo circa 2 ore settimanali di studio autonomo
+		\begin{itemize}
+			\item Classe $4^{\text{ta}}$
+			\begin{itemize}
+				\item 132 ore annue $\approx$ 4 ore a settimana
+				\item di cui 2 in compresenza con l'insegnante tecnico pratico
+				\item stimo circa 2$\frac{1}{2}$ ore settimanali di studio autonomo
+			\end{itemize}			
+			\item 20 alunni (18M / 2F)
+			\item 0 alunni ripetenti
+			\item 1 alunno BES con PDP (consulente esterno)
+			\item la maggioranza degli alunni con livello medio/alto
+			\item gli studenti svolgono lezione in laboratorio, con una postazione PC per ogni alunno
+			\item il laboratorio \`e dotato di proiettore e lavagna bianca
+		\end{itemize}
 	\end{block}
 	
 \end{frame}
 
 \section[Programmazione didattica]{Programmazione didattica}
 
-\begin{frame}[allowframebreaks]{Quadro normativo}{Le leggi, le linee guida, le direttive ministeriali}
+\begin{frame}[allowframebreaks]{Quadro normativo}
+%{Le leggi, le linee guida, le direttive ministeriali}
+{Linee guida e direttive ministeriali}
 
-	\begin{block}{d.P.R. n. 88 del 15 marzo 2010, articolo 8, comma 3}
+	\begin{block}{d.P.R. n. 88 del 15 marzo 2010, articolo 8, comma 3 -- All. A.2}
 		\noindent {\color{blue!50!black}``ISTITUTI TECNICI -- LINEE GUIDA PER IL PASSAGGIO AL NUOVO ORDINAMENTO''}
+		% http://hubmiur.pubblica.istruzione.it/alfresco/d/d/workspace/SpacesStore/fd8ad76e-0e72-4ff2-aeff-0264b98168c3/linee_guida_tec_doc_completo_15_07_2010.pdf#page=63
 		\medbreak
-		\noindent\textbf{Finalit\`a dell'articolazione SIA, estratto della pagina 38 }
+		\noindent\textbf{Presentazione sintetica ITT -- I\&T, estratto della pagina 63}
 		\medbreak
-		$\bullet$ ``Sistemi informativi aziendali'', per sviluppare competenze relative alla gestione del
-		sistema informativo aziendale, alla valutazione, alla scelta e all'adattamento di software applicativi,
-		alla realizzazione di nuove procedure, con particolare riguardo al sistema di archiviazione, \alert{della
-		comunicazione in rete} e della sicurezza informatica;
+		\mybullet L'indirizzo ``Informatica e Telecomunicazioni'' integra \alert{competenze} scientifiche e \alert{tecnologiche nel campo} dei sistemi informatici, dell'elaborazione delle informazioni, delle applicazioni e tecnologie Web, \alert{delle reti} e degli apparati \alert{di comunicazione}; \textit{omissis}
 	\end{block}
 	
 	\begin{block}{Direttiva n. 4  del 16 gennaio 2012}
 		\noindent {\color{blue!50!black} \textbf{in materia di Linee Guida per il secondo biennio e quinto anno per i percorsi degli Istituti Tecnici a norma dell'articolo 8, comma 3 del d.P.R. del 15 marzo 2010, n. 88.}}
 		\medbreak
-		Definisce, negli allegati, le schede disciplinari per il secondo biennio.
+		Definisce, negli allegati, le schede disciplinari per il secondo biennio e quinto anno.
 		\medbreak
-		Allegato B1, ``ISTITUTI TECNICI -- LINEE GUIDA PER IL PASSAGGIO AL NUOVO ORDINAMENTO -- Schede disciplinari Secondo biennio e quinto anno''
+		Allegato C4, ``ISTITUTI TECNICI -- LINEE GUIDA PER IL PASSAGGIO AL NUOVO ORDINAMENTO -- Schede disciplinari Secondo biennio e quinto anno''
+		%http://banner.orizzontescuola.it/B1_AFM.pdf#page=3
 	\end{block}\label{dir:16012012}
 \end{frame}
 
-\begin{frame}{Indicazioni ministeriali}{Competenze, Conoscenze, Abilit\`a}
-	\begin{block}{Indirizzo AFM, estratti dall'Allegato B1}
+\begin{frame}[allowframebreaks]{Indicazioni ministeriali}{Schede disciplinari -- Indirizzo ``Informatica'' -- ``Sistemi e Reti'', estratti All. C4}
+		\begin{tabular}{p{\dimexpr \linewidth-2\tabcolsep}}
+		\toprule
+		\multicolumn{1}{c}{\bf Risultati di apprendimento del secondo biennio e quinto anno}\\
+		\midrule
+			\mybullet \alert<2>{configurare, installare e gestire sistemi di elaborazione dati e reti}\\
+			\mybullet scegliere dispositivi e strumenti in base alle loro caratteristiche funzionali\\
+			\mybullet utilizzare le reti e gli strumenti informatici nelle attivit\`a di studio, ricerca e approfondimento disciplinare\\
+			\mybullet \alert<2>{analizzare il valore, i limiti e i rischi delle varie soluzioni tecniche} per la vita sociale e culturale con particolare attenzione alla sicurezza nei luoghi di vita e di lavoro, alla tutela della persona, dell'ambiente e del territorio\\
+		\bottomrule
+		\end{tabular}
 		
-		\begin{description}
-			\item[Competenze] utilizzare i sistemi informativi aziendali e gli strumenti di comunicazione integrata d'impresa, per realizzare attivit\`a
-			comunicative con riferimento a differenti contesti
-		\end{description}
-		
-		\begin{description}
-			\item[Conoscenze]
-			\begin{itemize}
-				\item Fasi di sviluppo di un ipermedia
-				\item \alert{Linguaggi del Web}
-				\item Struttura, usabilit\`a e accessibilit\`a di un sito Web
-				\item Servizi di rete a supporto dell'azienda con particolare riferimento alle attivit\`a commerciali 
-			\end{itemize}
-		\end{description}
-		
-		\begin{description}
-			\item[Abilit\`a]
-			\begin{itemize}
-				\item Produrre ipermedia integrando e contestualizzando oggetti selezionati da pi\`u fonti
-				\item \alert{Realizzare pagine Web}
-			\end{itemize}
-		\end{description}
-		
-	\end{block}
+		\centering
+		\begin{tabular}{p{0.49\dimexpr \linewidth-2\tabcolsep}p{0.49\dimexpr \linewidth-2\tabcolsep}}
+		\toprule
+		\multicolumn{2}{c}{\bf Secondo biennio}\\
+		\multicolumn{1}{c}{\bf Conoscenze} & \multicolumn{1}{c}{\bf Abilit\`a}\\
+		\midrule
+			\mybullet \alert<4>{Organizzazione del software di rete in livelli} & \mybullet Individuare la corretta \alert<4>{configurazione di una data applicazione}\\
+			\mybullet Tipologie  e \alert<4>{tecnologie delle reti locali e geografiche} & \mybullet Progettare, realizzare, configurare e gestire una rete\\
+			\mybullet \alert<4>{Protocolli per la comunicazione in rete}\\
+			\mybullet \alert<4>{Tecniche di gestione dell'indirizzamento di rete}\\
+			\mybullet Problematiche di instradamento nelle reti geografiche\\
+			\mybullet Lessico e terminologia tecnica di settore anche in lingua inglese & \mybullet Utilizzare il lessico e la terminologia tecnica di settore anche in lingua inglese\\
+		\bottomrule
+		\end{tabular}
 		
 	\note{%
 
@@ -275,104 +317,111 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 %	\end{block}
 %\end{frame}
 
-\begin{frame}[allowframebreaks]{Definizioni}{Quadro europeo delle qualifiche}
-	\begin{description}
-		\item[risultati dell'apprendimento] descrizione di ci\`o
-		che un discente conosce, capisce ed \`e in grado di
-		realizzare al termine di un processo d'apprendimento.
-		I risultati sono definiti in termini di conoscenze,
-		abilit\`a e competenze;
+%\begin{frame}[allowframebreaks]{Definizioni}{Quadro europeo delle qualifiche}
+%	\begin{description}
+%		\item[risultati dell'apprendimento] descrizione di ci\`o
+%		che un discente conosce, capisce ed \`e in grado di
+%		realizzare al termine di un processo d'apprendimento.
+%		I risultati sono definiti in termini di conoscenze,
+%		abilit\`a e competenze;
 		
-		\item[conoscenze] risultato dell'assimilazione di
-		informazioni attraverso l'apprendimento. Le
-		conoscenze sono un insieme di fatti, principi, teorie
-		e pratiche relative ad un settore di lavoro o di studio.
-		Nel contesto del Quadro europeo delle qualifiche
-		le conoscenze sono descritte come teoriche e/o
-		pratiche;
+%		\item[conoscenze] risultato dell'assimilazione di
+%		informazioni attraverso l'apprendimento. Le
+%		conoscenze sono un insieme di fatti, principi, teorie
+%		e pratiche relative ad un settore di lavoro o di studio.
+%		Nel contesto del Quadro europeo delle qualifiche
+%		le conoscenze sono descritte come teoriche e/o
+%		pratiche;
 		
-		\item[abilit\`a] indicano le capacit\`a di applicare
-		conoscenze e di utilizzare know-how per portare a
-		termine compiti e risolvere problemi. Nel contesto
-		del Quadro europeo delle qualifiche le abilit\`a sono
-		descritte come cognitive (comprendenti l'uso del
-		pensiero logico, intuitivo e creativo) o pratiche
-		(comprendenti l'abilit\`a manuale e l'uso di metodi,
-		materiali, strumenti);
+%		\item[abilit\`a] indicano le capacit\`a di applicare
+%		conoscenze e di utilizzare know-how per portare a
+%		termine compiti e risolvere problemi. Nel contesto
+%		del Quadro europeo delle qualifiche le abilit\`a sono
+%		descritte come cognitive (comprendenti l'uso del
+%		pensiero logico, intuitivo e creativo) o pratiche
+%		(comprendenti l'abilit\`a manuale e l'uso di metodi,
+%		materiali, strumenti);
 		
-		\item[competenze] comprovata capacit\`a di utilizzare
-		conoscenze, abilit\`a e capacit\`a personali, sociali
-		e/o metodologiche, in situazioni di lavoro o di
-		studio e nello sviluppo professionale e personale.
-		Nel contesto del Quadro europeo delle qualifiche
-		le competenze sono descritte in termini di
-		responsabilit\`a e autonomia.
-	\end{description}
-\end{frame}
+%		\item[competenze] comprovata capacit\`a di utilizzare
+%		conoscenze, abilit\`a e capacit\`a personali, sociali
+%		e/o metodologiche, in situazioni di lavoro o di
+%		studio e nello sviluppo professionale e personale.
+%		Nel contesto del Quadro europeo delle qualifiche
+%		le competenze sono descritte in termini di
+%		responsabilit\`a e autonomia.
+%	\end{description}
+%\end{frame}
 
+\begin{frame}{Programmazione didattica}{Chi, come, perch\'e}
+
+\mybullet Visto il P(T)OF, considerato il territorio e le specificit\`a dell'Istituto,
+\alert{il Dipartimento d'Informatica} stabilisce una pianificazione di massima identificando, per ogni anno di corso, i moduli didattici.
+
+\mybullet Ogni modulo ha una collocazione temporale e indica i prerequisiti, i risultati d'apprendimento (espressi in termini di competenze, conoscenze e abilit\`a), la durata temporale, i metodi e i materiali didattici e la tipologia e il numero minimo di verifiche, le prove comuni.
+
+\mybullet Il docente pu\`o integrare la programmazione, di concerto con il consiglio di classe, con UdA e compiti autentici, per la certificazione di competenze trasversali.
+
+\mybullet La parte seguente \`e la mia progettazione di un ciclo di lezioni nel modulo sul livello di applicazione, che segue quelli sui livelli di rete e trasporto, limitatamente al ``Domain Name System''.
+
+\end{frame}
 
 \begin{frame}[allowframebreaks]{Prerequisiti, conoscenze pregresse, motivazioni}{Per la programmazione e la riprogettazione dell'attivit\`a didattica}
 
-	Non si pu\`o programmare un'attivit\`a didattica senza conoscere la classe.
+%	Non si pu\`o programmare un'attivit\`a didattica senza conoscere la classe.
 	
-	Andrebbero lette le relazioni finali e verificate le conoscenze in ingresso!
+%	Andrebbero lette le relazioni finali e verificate le conoscenze in ingresso!
 	
-	Assumeremo che i seguenti prerequisititi di conoscenza siano stati conseguiti.
+	Assumeremo che i seguenti prerequisititi di conoscenza siano stati conseguiti (e certificati).
 		
 	\begin{block}{Prerequisiti e conoscenze pregresse}
 		I concetti base e gli aspetti implementativi dei protocolli delle applicazioni di rete
 		
 		\begin{itemize}
 			\item la commutazione di pacchetto, i protocolli IP e TCP;
-			\item i modelli di servizio del livello di trasporto;
+			\item i modelli di servizio del livello di trasporto (livello 4 del modello ISO/OSI);
+			\item i modelli di servizio del livello di rete (livello 3 del modello ISO/OSI);
 			\item il paradigma client-server;
-			\item il protocollo HTTP, la composizione di una URL.		
+			\item la composizione di una URL.
 		\end{itemize}
 	\end{block}
 	
-	\begin{block}{Conoscenze pregresse che l'insegnante pu\`o sondare}
-		Gli studenti hanno gi\`a esperienza d'uso del Web e di altre applicazioni di rete realizzate con le tecnologie del Web.
+	%\begin{block}{Conoscenze pregresse che l'insegnante pu\`o sondare}
+	%	Gli studenti hanno gi\`a esperienza d'uso del Web e di altre applicazioni di rete realizzate con le tecnologie del Web.
 		
-		\medskip
+	%	\medskip
 		
-		I ``nativi digitali'' sono stati tenuti all'oscuro di quanto c'\`e dietro ad un software. Questo \`e materia di sondaggio per la progettazione dell'attivit\`a didattica e di motivazione.
-	\end{block}
+	%	I ``nativi digitali'' sono stati tenuti all'oscuro di quanto c'\`e dietro ad un software. Questo \`e materia di sondaggio per la progettazione dell'attivit\`a didattica e di motivazione.
+	%\end{block}
 	
 	%\framebreak
 	
-	{\centering
-%		\includegraphics[height=0.5\textheight]{img/test_ingresso1}
-%		\includegraphics[height=0.5\textheight]{img/test_ingresso2}
-%		\includegraphics[height=0.5\textheight]{img/test_ingresso3}
-	}
-
 	%\framebreak
 
-	\begin{block}{Esperienze pregresse}
-		Scambiare informazioni/comunicare tra esseri umani
-		\begin{itemize}
-			\item \textbf{blog};
-			\item \textbf{forum}
-			\item \textbf{social network}
-			\item \textbf{wiki};
-			\item \textbf{giochi online}
-		\end{itemize}
+	%\begin{block}{Esperienze pregresse}
+	%	Scambiare informazioni/comunicare tra esseri umani
+	%	\begin{itemize}
+	%		\item \textbf{blog};
+	%		\item \textbf{forum}
+	%		\item \textbf{social network}
+	%		\item \textbf{wiki};
+	%		\item \textbf{giochi online}
+	%	\end{itemize}
 		
-		Soddisfare esigenze specifiche con web application
-		\begin{itemize}
-			\item \textbf{commercio elettronico}
-			\item \textbf{mappe} e \textbf{ricerca di percorsi} in un grafo stradale
-			\item \textbf{web-mail}
-			\item \textbf{calendari} e \textbf{strumenti collaborativi}
-		\end{itemize}
-	\end{block}
+	%	Soddisfare esigenze specifiche con web application
+	%	\begin{itemize}
+	%		\item \textbf{commercio elettronico}
+	%		\item \textbf{mappe} e \textbf{ricerca di percorsi} in un grafo stradale
+	%		\item \textbf{web-mail}
+	%		\item \textbf{calendari} e \textbf{strumenti collaborativi}
+	%	\end{itemize}
+	%\end{block}
 		
 	\begin{block}{Motivare allo studio: fare leva sui bisogni di}
 		\begin{description}
 			\item[autostima] stima da parte dei compagni e degli insegnanti\\\hfill\textbf{peer assessment}
 			\item[autoe-efficacia] apportare il proprio contributo\\\hfill\textbf{peer assessment, mini-progetto}
-			\item[potere] dominare la realt\`a\\\hfill\textbf{(ri)conoscere architetture e tecnologie web app}
-			\item[avere uno scopo] dare un senso alle nozioni apprese\\\hfill\textbf{creare nuove web app, mini-progetto}
+			\item[potere] dominare la realt\`a\\\hfill\textbf{(ri)conoscere architetture e tecnologie della rete}
+			\item[avere uno scopo] dare un senso alle nozioni apprese\\\hfill\textbf{configurare bind, analizzare con sniffer, riconoscere minacce, mini-progetto}
 			\item[sfida] difficolt\`a da superare\\\hfill\textbf{mini-progetto}
 		\end{description}
 	\end{block}
