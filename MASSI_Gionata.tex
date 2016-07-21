@@ -552,6 +552,8 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 		
 		\item Il video ``\hyperlink{https://youtu.be/D-VCk4_GMjQ?list=PLa_solX20V8I8t5sIW7A5Vx3v5YZ-OM3S}{IP Address and DNS}'' di code.org
 		
+		\item Moodle
+		
 	\end{itemize}
 	\note{%
 		
@@ -562,7 +564,7 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 \begin{frame}{Modi e tempi}{Pianificazione delle lezioni}
 	
 	\begin{block}{Quando?}
-	Marzo
+	Marzo, dopo i moduli sul livello di rete e di trasporto.
 	\end{block}
 	
 	\begin{block}{Quanto? e in che modo?}
@@ -624,7 +626,6 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 	}%note	
 \end{frame}
 
-
 \part[Lezione simulata]{Esposizione della lezione}
 \frame{\partpage}
 
@@ -665,6 +666,29 @@ essere sicuri di rifersi a me dovevano usare anche il cognome: ``Gionata Massi''
 
 \end{frame}
 
+\begin{frame}{Il Domain Name System}{Definizione}
+
+	\begin{block}{Definizione}
+	   Con Domain Name System (DNS) si intende:
+	   
+		\mybullet un database distrubuito che memorizza coppie (nome host, indirizzo IP) di un insieme di host
+		
+		\mybullet un protocollo a livello di applicazione che regola la comunicazione tra host e name server
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{Il Domain Name System}{Funzionalit\`a}
+
+	\begin{block}{Funzionalit\`a}
+		\begin{enumerate}
+			\item traduzione dei nomi simbolici in indirizzi
+			\item gestione degli alias
+			\item bilanciamento del carico -- nel caso di servizi offerti da pi\`u host
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
 \section[La soluzione]{La soluzione}
 
 \begin{frame}{Progettazione della soluzione}{Primo tentativo}
@@ -673,7 +697,7 @@ essere sicuri di rifersi a me dovevano usare anche il cognome: ``Gionata Massi''
 
 \mybullet Il servizio \`e erogato da un unico host, che chiamiamo name server.
 
-\mybullet Il name server esegue operazioni CRUD su una tabella che mantiene la coppia di valori hostname/IP.
+\mybullet Il name server esegue operazioni CRUD su una tabella che mantiene la coppia di valori (hostname, indirizzo IP). 
 
 \end{exampleblock}
 
@@ -691,14 +715,47 @@ essere sicuri di rifersi a me dovevano usare anche il cognome: ``Gionata Massi''
 \end{block}
 \end{frame}
 
-\begin{frame}{Progettazione della soluzione}{Come sono pensati i DNS}
+\begin{frame}[allowframebreaks]{Progettazione della soluzione}{Come sono pensati i DNS}
 
 \begin{block}{Scalabili e vicini}
+
 \mybullet Il database dei nomi degli host deve essere distribuito su pi\`u name server.
 
 \mybullet Un organizzazione dei nomi gerarchica (dominio) consente di separare le responsabilit\`a dei name server.
 
-\mybuller Quando un name server riceve una risposta o 
+\end{block}
+
+\begin{block}{La struttura gerarchica}
+
+	\mybullet server di nomi radice (root DNS server)
+	
+	\mybullet server top-level domain (TLD server)
+	
+	\mybullet server di competenza (authoritative)
+\end{block}
+
+\includegraphics[width=\textwidth]{img/gerarchia}
+
+\end{frame}
+
+\begin{frame}{Local name server}{Il mio DNS?}
+\begin{block}
+	
+	\mybullet non appartiene alla gerarchia
+	
+	\mybullet ogni ISP ha un default name server
+	
+	\mybullet la query DNS di un host viene inviata al default name server, che si comporta come un proxy e, se non conosce il record da restituire, inoltra la richiesta ai livelli pi\`u alti della gerarchia
+\end{block}
+
+\begin{block}{Domande}
+	
+	\mybullet Dove lo leggo?
+	
+	\mybullet Come lo modifico?
+	
+	\mybullet Come mi viene assegnato? 
+\end{block}
 \end{frame}
 
 \section[Lab 1: nslookup]{Query con \texttt{nslookup}}
@@ -726,6 +783,8 @@ Chiedere in modo interattivo l'indirizzo dell'host \texttt{ricop.dii.univpm.it}
 \only<8>{\includegraphics[width=\textwidth]{img/lab1_4}}
 
 \end{frame}
+
+\end{document}
 
 \section[Lab 2: wireshark]{Analisi del protocollo DNS con \texttt{wireshark}}
 
