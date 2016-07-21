@@ -236,7 +236,7 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 			\item 1 alunno BES disgrafico con PDP 
 			\item la maggioranza degli alunni ha raggiunto un livello medio/alto
 			\item tutte le lezioni sono in laboratorio, con una postazione PC connessa ad internet per ogni alunno
-			\item il laboratorio \`e dotato di proiettore, e lavagna bianca
+			\item il laboratorio \`e dotato di proiettore e lavagna bianca
 		\end{itemize}
 	\end{block}
 	
@@ -552,7 +552,15 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 		
 		\item Il video ``\hyperlink{https://youtu.be/D-VCk4_GMjQ?list=PLa_solX20V8I8t5sIW7A5Vx3v5YZ-OM3S}{IP Address and DNS}'' di code.org
 		
-		\item Moodle
+		\item Moodle per la gestione del corso
+		
+		\item Libro di testo consigliato:  Lo Russo \& Bianchi, ``Sistemi e Reti -- Volume 2'', Hoepli
+		
+		\item Kurose \& Ross, ``Internet e Reti di Calcolatori'', McGraw-Hill (potenziamento, slide)
+		
+		\item RFC 1034 e 1035 (potenziamento, miniprogetto)
+		
+		\item Giacomini, ``Appunti di informatica libera'', Capitolo 33. Risoluzione dei nomi. Disponibile online alla pagina \url{http://a2.pluto.it/a2/risoluzione_dei_nomi.htm}
 		
 	\end{itemize}
 	\note{%
@@ -576,7 +584,7 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 	\end{block}
 
 	\begin{block}{Insieme a chi?}
-		``Informatica'' (concetto di ricorsione e database) e ``Tecnologie e progettazione di sistemi informatici e telecomunicazioni'' (sistemi operativi).
+		``alert{Informatica}'' e ``\alert{Tecnologie e progettazione di sistemi informatici e telecomunicazioni}'' (database, ricorsione, sistemi operativi, caching, progettazione e realizzazione del codice). ``\alert{Inglese}'' (corretta pronuncia dei termini, lettura delle man page e delle RFC).
 	\end{block}
 %	\centering\includegraphics[trim={2cm 14.5cm 2cm 2cm},clip,width=0.95\textwidth]{img/gantt}		
 \end{frame}
@@ -633,13 +641,14 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 
 \begin{frame}{Il problema}{Ricordarsi i codici}
 
-\begin{exampleblock}
+Dopo aver visto a casa  il video ``\hyperlink{https://youtu.be/D-VCk4_GMjQ?list=PLa_solX20V8I8t5sIW7A5Vx3v5YZ-OM3S}{IP Address and DNS}'' di code.org
 
+
+\begin{exampleblock}{Codici e nomi}
 \mybullet Per l'Agenzia delle Entrate sono il contribuente ``MSSGNT80A21H769K''.
 
-
-\mybullet Per gli amici sono ``Gionata''. Fra i miei compagni di corso avevo un omonimo per cui per
-essere sicuri di rifersi a me dovevano usare anche il cognome: ``Gionata Massi''.
+\mybullet Per gli amici sono ``Gionata''. Il nome \`e sufficiente ad identificarmi in famiglia.
+Ma non lo era all'universit\`a quando tra i miei compagni di corso avevo un omonimo. Per chiamarmi con la sicurezza di rifersi a me dovevano usare anche il cognome: ``Gionata Massi''.
 \end{exampleblock}
 
 \begin{block}{Domande}
@@ -652,16 +661,21 @@ essere sicuri di rifersi a me dovevano usare anche il cognome: ``Gionata Massi''
 
 \begin{frame}{Il problema}{Ricordarsi i 32 bit di un indirizzo IPv4}
 
-\begin{exampleblock}
+\begin{exampleblock}{Indirizzi IP e nomi degli host}
 
 \mybullet Un host \`e identificato da un indirizzo IP di 32 bit, per comodit\`a di lettura raggruppato in quattro gruppi da 8.
 
 
-\mybullet Per ricordarci la sua funzione o dove si trova un host usiamo un nome (hostname) facile da ricordare per un essere umano.
+\mybullet Per ricordarci la sua funzione o dove si trova un host usiamo un nome (hostname) facile da ricordare per un essere umano. Per i limiti dei protocolli di rete occorre considerare che ci sono dei limiti sul numero di caratteri.
+
+\mybullet Tanti host svolgono lo stesso compito, ad esempio servire pagine web. Potremmo chiamarlo \texttt{www}, ma come identificarlo tra tanti host che si chiamano cos\`i? I domini! 
 \end{exampleblock}
 
 \begin{block}{Domanda}
 \mybullet Come realizzare una mappa tra i nomi dei computer e i loro indirizzi IP?
+
+\mybullet Allora che significano i punti, ad esempio in \texttt{www.istruzione.it}?
+
 \end{block}
 
 \end{frame}
@@ -669,7 +683,7 @@ essere sicuri di rifersi a me dovevano usare anche il cognome: ``Gionata Massi''
 \begin{frame}{Il Domain Name System}{Definizione}
 
 	\begin{block}{Definizione}
-	   Con Domain Name System (DNS) si intende:
+	   Con \alert{Domain Name System} (\alert{DNS}) si intende:
 	   
 		\mybullet un database distrubuito che memorizza coppie (nome host, indirizzo IP) di un insieme di host
 		
@@ -715,50 +729,121 @@ essere sicuri di rifersi a me dovevano usare anche il cognome: ``Gionata Massi''
 \end{block}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Progettazione della soluzione}{Come sono pensati i DNS}
+\begin{frame}{Progettazione della soluzione}{Come \'e progettato realmente il DNS I}
 
-\begin{block}{Scalabili e vicini}
+\begin{block}{Tanti database scalabili e vicini}
 
 \mybullet Il database dei nomi degli host deve essere distribuito su pi\`u name server.
 
 \mybullet Un organizzazione dei nomi gerarchica (dominio) consente di separare le responsabilit\`a dei name server.
 
+\mybullet Un sistema di caching: dopo la prima richiesta le query non si propagano. \uncover<2>{\alert{Analogie con: tabelle di lookup e tecniche di programmazione tipo momoize, organizzazione della memoria\ldots{}}}
 \end{block}
+\end{frame}
+
+\begin{frame}{Progettazione della soluzione}{Come \'e progettato realmente il DNS II}
 
 \begin{block}{La struttura gerarchica}
 
-	\mybullet server di nomi radice (root DNS server)
+	\mybullet Server di nomi radice (root DNS server)
 	
-	\mybullet server top-level domain (TLD server)
+	\mybullet Server top-level domain (TLD server)
 	
-	\mybullet server di competenza (authoritative)
+	\mybullet Server di competenza (authoritative)
 \end{block}
+\end{frame}
 
-\includegraphics[width=\textwidth]{img/gerarchia}
+\begin{frame}{Progettazione della soluzione}{Come \'e progettato realmente il DNS III}
+
+\centering\includegraphics[width=\textwidth]{img/gerarchia}
 
 \end{frame}
+
+
+\begin{frame}{Progettazione della soluzione}{Come \'e progettato realmente il DNS III}
+
+\centering\includegraphics[width=\textwidth]{img/domini}
+
+\end{frame}
+
+\section[Realizzazione del servizio]{Realizzazione del servizio DNS}
 
 \begin{frame}{Local name server}{Il mio DNS?}
 \begin{block}
 	
-	\mybullet non appartiene alla gerarchia
+	\mybullet Non appartiene alla gerarchia
 	
-	\mybullet ogni ISP ha un default name server
+	\mybullet Ogni ISP ha un default name server
 	
-	\mybullet la query DNS di un host viene inviata al default name server, che si comporta come un proxy e, se non conosce il record da restituire, inoltra la richiesta ai livelli pi\`u alti della gerarchia
+	\mybullet La query DNS di un host viene inviata al default name server, che si comporta come un proxy e, se non conosce il record da restituire, inoltra la richiesta ai livelli pi\`u alti della gerarchia
 \end{block}
 
-\begin{block}{Domande}
+\begin{block}{Domande sui name server locali}
 	
 	\mybullet Dove lo leggo?
 	
-	\mybullet Come lo modifico?
+	\mybullet Quanti sono?
 	
-	\mybullet Come mi viene assegnato? 
+	\mybullet Come lo/i modifico?
+	
+	\mybullet Come mi viene/vengono assegnato/i? 
 \end{block}
 \end{frame}
 
-\section[Lab 1: nslookup]{Query con \texttt{nslookup}}
+\begin{frame}{Risoluzione dei nomi di dominio}{gethostbyname}
+\begin{block}{Il resolver}
+  \mybullet Il resolver \`e il processo (l'insieme di funzioni) che interroga gli Internet name server e ne interpreta le risposte.
+  
+  \mybullet la sua configurazione \`e memorizzata in \texttt{/etc/resolv.conf} e in \texttt{/etc/host.conf}
+\end{block}
+
+\begin{block}{Processo di risoluzione}
+\begin{enumerate}
+\item Il client interroga il DNS, chiedendo l'indirizzo per un dominio;
+\item Il DNS restituisce il record;
+\item Il client si connette all'indirizzo contenuto nel record.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+%%%
+\begin{frame}{Risoluzione dei nomi di dominio -- Recursive I}{Query ricorsiva}
+\begin{block}{Processo di risoluzione nel caso ricorsivo}
+\begin{enumerate}
+\item Il client chiede al Local NS l'indirizzo del dominio;
+\item Il Local NS delega la richiesta al Root NS;
+\item Il Root NS delega la richiesta al TLD NS;
+\item Il TLD NS interroga il NS autoritativo per il dominio;
+\item Il NS autoritativo rimanda il record al TLD NS. Il record viene passato tra tutti i NS coinvolti, fino al Local NS;
+\item Il Local NS restiruisce l'indirizzo al client, che raggiunge la destinazione.
+I NS sono interrogati ricorsivamente. Ogni NS coinvolto, interroga il successivo, che interroger\`a quello successivo ancora.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{Risoluzione dei nomi di dominio -- Recursive II}{Query ricorsiva}
+\centering\includegraphics[height=0.8\textheight]{img/dns-risoluzione-ricorsiva}
+\end{frame}
+
+\begin{frame}{Risoluzione dei nomi di dominio -- Iterative I}{Query iterativa}
+\begin{block}{Processo di risoluzione nel caso ricorsivo}
+\begin{enumerate}
+\item Il client chiede al Local NS l'indirizzo del dominio;
+\item Il Local NS interroga il Root NS, per l'indirizzo del NS autoritativo per il TLD del dominio;
+\item Il Local NS interroga il TLD NS, per l'indirizzo del NS autoritativo per il dominio richiesto;
+\item Il Local NS interroga il NS autoritativo per il dominio, per l'indirizzo della risorsa richiesta;
+\item Il Local NS restituisce l'indirizzo al client, che raggiunge la destinazione.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{Risoluzione dei nomi di dominio -- Iterative II}{Query iterativa}
+\centering\includegraphics[height=0.8\textheight]{img/dns-risoluzione-iterativa}
+\end{frame}
+%%%
+\section{Laboratorio}
+
+\subsection[Lab 1: nslookup]{Query con \texttt{nslookup}}
 
 \begin{frame}{Interrogare il DNS}{Usare \texttt{nslookup}}
 
@@ -784,38 +869,97 @@ Chiedere in modo interattivo l'indirizzo dell'host \texttt{ricop.dii.univpm.it}
 
 \end{frame}
 
-\end{document}
 
-\section[Lab 2: wireshark]{Analisi del protocollo DNS con \texttt{wireshark}}
+\subsection[Lab 2: wireshark]{Analisi del protocollo DNS con \texttt{wireshark}}
 
 \begin{frame}{Analisi del protocollo DNS}{Usare \texttt{wireshark}}
-
-\only<1,3,5,7>{
+\only<1,3>{
 \begin{block}{Sfide -- usare \texttt{wireshark} per visualizzare query DNS}
 
-Wireshark lo conosciamo dai moduli precedenti (rete e trasporto).
+Wireshark e netcat (nc) li conosciamo dai moduli precedenti (rete e trasporto) e attuale (applicazione).
 
 \begin{enumerate}
 	\item Come filtrare la visualizzazione dei soli pacchetti DNS? Elencare almeno due modi!
-	\item \uncover<3->{Mostrare i pacchetti del protocollo DNS catturati navigando il sito wikiricop.dii.univpm.it}
-	\item \uncover<5->{abilitando la visualizzazione completa del pacchetto di risposta}
-	\item \uncover<7->{visualizzando le informazioni sull'host}
+	\item \uncover<3>{Mostrare i pacchetti del protocollo DNS catturati navigando il sito wikiricop.dii.univpm.it}
+	\item \uncover<3>{Confrontare i record letti con nslookup e cattuari con wireshark}
+	\item \uncover<3>{Forgiare una query DNS con \texttt{nc}, catturare la risposta con \texttt{wireshark} ed indicare l'indirizzo IP dell'host \texttt{www.google.com}}.
 \end{enumerate}
 \end{block}
 }
-%\only<2>{\includegraphics[width=\textwidth]{img/lab2_1}}
-%\only<4>{\includegraphics[width=\textwidth]{img/lab2_2}}
-%\only<6>{\includegraphics[width=\textwidth]{img/lab2_3}}
-%\only<8>{\includegraphics[width=\textwidth]{img/lab2_4}}
-
+\only<2>{\centering\includegraphics[width=0.9\textwidth]{img/lab2_1}}
 \end{frame}
 
 \section[Valutazione]{Valutazione}
 
 \begin{frame}{Valutazione}{Formativa}
+	\begin{block}{Risposta multipla -- Verifica delle conoscenze}
+		\begin{enumerate}
+			\item Con ``Domain Name System'' si intende:
+			\begin{enumerate}[a]
+				\item un sistema distribuito che \ldots
+				\item \ldots
+			\end{enumerate}
+			
+			\item Con indirizzo FQDN s'intende
+			\begin{enumerate}[a]
+				\item il nome completamente qualificato\ldots
+				\item \ldots
+			\end{enumerate}
+			
+			\item Gli svantaggi di un db centralizzato sono:
+			\begin{enumerate}[a]
+				\item singolo punto di guasto\ldots
+				\item \ldots
+			\end{enumerate}
+			
+		\end{enumerate}\hspace{0.45cm}$\vdots$
 
+	\end{block}
 \end{frame}
 
+\begin{frame}{Valutazione}{Formativa}
+	\begin{block}{Vero o falso }
+		\begin{enumerate}
+			\item Ad ogni host corrisponde un unico indirizzo IP?
+			\item Un host pu\`o avere pi\`u nomi?
+			\item Il DNS funziona solo in UDP?
+			\item Il FQDN pu\`o essere arbitrariamente lungo?
+		\end{enumerate}\hspace{0.45cm}$\vdots$
+
+	\end{block}
+\end{frame}
+
+\begin{frame}{Valutazione}{Sommativa}
+	\begin{block}{Relazioni sulle attivit\`a di laboratorio}
+		Tutte le attivit\`a di laboratorio devono essere accompagnate da una relazione singola o in gruppo (BES) che deve essere caricata sulla piattaforma Moodle.
+		
+		La relazione \`e valutata secondo una griglia elaborata con gli studenti.
+	\end{block}
+	\begin{block}{Domande aperte -- orale o scritte}
+			\begin{enumerate}
+				\item Descrivi la procedura di risoluzione di un nome nel caso di interrogazione ricorsiva.
+				\item Data la seguente configurazione di rete, indica la sequenza di request e response della query DNS \ldots{}
+			\end{enumerate}
+	\end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Valutazione}{Sommativa}
+	\begin{block}{Mini-progetto I}
+Il Dirigente scolastico dell'Istituto d'Istruzione Superiore ``Edgser W. Dijkstra'' indice un bando per la progettazione e la realizzazione dell'infrastruttura di rete dell'Istituto.
+Tale infrastruttura prevede la presenza di cinque reti locali connesse ad Internet: la rete del personale docente, quella del personale amministrativo, quella per i laboratori e, infine, una rete WiFi per i dispositivi degli studenti.
+
+Alcuni host di ciascun dominio devono essere raggiungibili da Internet tramite host name (eventuali NAT sono a cura del docente), per garantire il funzionamento dei servizi di autenticazione, stampa, web, gestione dei dati\ldots{}.
+	\end{block}
+	
+	\begin{block}{Mini-progetto II}
+L'Istituto mette a disposizione un sistema per la simulazione della rete e delle macchine virtuali preconfigurato, cui i partecipanti al bando devono aggiungere \alert{i file di configurazione dei server DNS di competenza per ogni dominio e dei resolver degli host di ogni dominio}.
+ 
+Si partecipi al bando inviando i file di configurazione e la relazione tecnica corredata dalla documentazione di progetto.
+
+Ogni partecipante sar\`a valutato in base ai seguenti criteri: \ldots
+	\end{block}
+
+\end{frame}
 
 \part[Colloquio]{Colloquio}
 
@@ -825,6 +969,11 @@ Wireshark lo conosciamo dai moduli precedenti (rete e trasporto).
 	
 	\begin{center}
 		{\Large GRAZIE PER L'ATTENZIONE!}
+		
+		\bigskip
+		
+		\begin{center}\Huge{Any questions?}\end{center}
+
 	\end{center}
 	
 	\vfill
