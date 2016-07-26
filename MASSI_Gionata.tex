@@ -85,7 +85,7 @@ timewarningfirst=78,timewarningsecond=95]{tdclock}
 			]
 		\end{frame}
 	}
-}		
+}
 		
 \title[Concorso docenti CdC A41]
 {\Large{Processo di risoluzione degli indirizzi a livello applicativo}}
@@ -355,7 +355,7 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 
 \begin{frame}{Progettazione didattica}{Chi se ne occupa e in che modo. Ed io che progetto?}
 
-\mybullet \alert{il Dipartimento d'Informatica} stabilisce una pianificazione di massima identificando, per ogni anno di corso, i moduli didattici da realizzare. Essi sono progettati secondo le richieste del territorio e dell'Istituto, come espresso nel P(T)OF.
+\mybullet Il \alert{Dipartimento d'Informatica} stabilisce una pianificazione di massima identificando, per ogni anno di corso, i moduli didattici da realizzare. Essi sono progettati secondo le richieste del territorio e dell'Istituto, come espresso nel P(T)OF.
 
 \mybullet Ogni modulo indica i prerequisiti, i risultati d'apprendimento (espressi in termini di competenze, conoscenze e abilit\`a), la collocazione e la durata temporale, i metodi e i materiali didattici, la tipologia e il numero minimo di verifiche, eventualmente comuni per classi parallele.
 
@@ -371,7 +371,7 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 	
 %	Andrebbero lette le relazioni finali e verificate le conoscenze in ingresso!
 	
-	Assumeremo che i seguenti prerequisititi di conoscenza siano stati conseguiti (e certificati).
+	Assumeremo che i seguenti prerequisiti di conoscenza siano stati conseguiti (e certificati).
 		
 	\begin{block}{Prerequisiti e conoscenze pregresse}
 		I concetti base e gli aspetti implementativi dei protocolli delle applicazioni di rete
@@ -452,13 +452,13 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 			
 			\multirow{3}{*}{\parbox{0.2\textwidth}{Comprendere ed utilizzare il linguaggio tecnico}}
 			 & Elencare le componenti di un'applicazione di rete.\\
-			 & Definire i flussi di dati ed elaborazioni nel caso di DNS ricorsivi.\\
-			 & Mettere in relazione richiese e risposte DNS.\\
+			 & Definire i flussi di dati ed elaborazioni nel caso di query DNS.\\
+			 & Mettere in relazione richieste e risposte DNS.\\
 			 & Definire i termini \textit{Domain Name System}, \textit{Uniform Resource Locator} (URL), \textit{Fully Qualified Domain Name} (FQDN), \textit{name server}.\\
 			 
 			 \\
 			 
-			 \multirow{3}{*}{\parbox{0.2\textwidth}{Impostare il dominio e i name server}}
+			 \multirow{3}{*}{\parbox{0.2\textwidth}{Impostare il nome di dominio e i name server}}
 			 & Saper usare il comando \texttt{hostname}.\\
 			 & Saper configurare il file \texttt{/etc/hosts}.\\
 			 & Saper leggere e modificare il file \texttt{/etc/resolv.conf}.\\
@@ -466,13 +466,13 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 			 
 			 
 			 \multirow{2}{*}{\parbox{0.2\textwidth}{Interrogare un name server}}
-			 & Visualizzare richeste e riposte DNS intercorse fra l'host e il name server.\\
-			 & Visualizzare il nameserver autorevole.\\
+			 & Visualizzare richieste e risposte DNS intercorse fra l'host e il name server.\\
+			 & Visualizzare il name server di competenza.\\
 			 
 			 \\
 			
 			 \multirow{2}{*}{\parbox{0.2\textwidth}{Valutare le tecnologie}}
-			 & Illustrare i vantaggi e gli svantaggi dell'erogaione del servizio DNS su protocollo UDP confrontandolo con l'UDP.\\
+			 & Illustrare i vantaggi e gli svantaggi dell'erogazione del servizio DNS su protocollo UDP confrontandolo con il TCP.\\
 			 & Saper confrontare il modello di servizio ricorsivo rispetto a quello iterativo.\\
 			
 		\bottomrule
@@ -584,7 +584,7 @@ Classe di concorso A41 -- Scienze e tecnologie informatiche}
 	\end{block}
 
 	\begin{block}{Insieme a chi?}
-		``alert{Informatica}'' e ``\alert{Tecnologie e progettazione di sistemi informatici e telecomunicazioni}'' (database, ricorsione, sistemi operativi, caching, progettazione e realizzazione del codice). ``\alert{Inglese}'' (corretta pronuncia dei termini, lettura delle man page e delle RFC).
+		``\alert{Informatica}'' e ``\alert{Tecnologie e progettazione di sistemi informatici e telecomunicazioni}'' (database, ricorsione, sistemi operativi, caching, progettazione e realizzazione del codice). ``\alert{Inglese}'' (corretta pronuncia dei termini, lettura delle man page e delle RFC).
 	\end{block}
 %	\centering\includegraphics[trim={2cm 14.5cm 2cm 2cm},clip,width=0.95\textwidth]{img/gantt}		
 \end{frame}
@@ -737,7 +737,7 @@ Ma non lo era all'universit\`a quando tra i miei compagni di corso avevo un omon
 
 \mybullet Un organizzazione dei nomi gerarchica (dominio) consente di separare le responsabilit\`a dei name server.
 
-\mybullet Un sistema di caching: dopo la prima richiesta le query non si propagano. \uncover<2>{\alert{Analogie con: tabelle di lookup e tecniche di programmazione tipo momoize, organizzazione della memoria\ldots{}}}
+\mybullet Un sistema di caching: dopo la prima richiesta le query non si propagano. \uncover<2>{\alert{Analogie con: tabelle di lookup e tecniche di programmazione tipo memoize, organizzazione della memoria\ldots{}}}
 \end{block}
 \end{frame}
 
@@ -826,7 +826,7 @@ I NS sono interrogati ricorsivamente. Ogni NS coinvolto, interroga il successivo
 \end{frame}
 
 \begin{frame}{Risoluzione dei nomi di dominio -- Iterative I}{Query iterativa}
-\begin{block}{Processo di risoluzione nel caso ricorsivo}
+\begin{block}{Processo di risoluzione nel caso iterativo}
 \begin{enumerate}
 \item Il client chiede al Local NS l'indirizzo del dominio;
 \item Il Local NS interroga il Root NS, per l'indirizzo del NS autoritativo per il TLD del dominio;
